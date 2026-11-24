@@ -4,6 +4,7 @@ title: "kt-null-graph-controls: code and run files for null-graph controls in kn
 version: 4.0.0
 date-released: 2026-11-24
 license: MIT
+doi: 10.5281/zenodo.24492979
 repository-code: "https://github.com/Bangth2026/kt-null-graph-controls"
 authors:
   - family-names: Truong

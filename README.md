@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24492979.svg)](https://doi.org/10.5281/zenodo.24492979)
+
 # Null-graph controls for concept graphs in knowledge tracing
 
 Code, run files and analysis scripts for
@@ -56,7 +58,7 @@ Zenodo record; the content of `kt/` is unchanged except for the optional imports
 
 ## Archive
 
-Each GitHub release is archived on Zenodo; the DOI is shown on the repository page.
+Zenodo: https://doi.org/10.5281/zenodo.24492979 (all versions); version 4.0.0: https://doi.org/10.5281/zenodo.24492980.
 
 ## Citation
 
