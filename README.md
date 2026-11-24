@@ -56,7 +56,7 @@ Zenodo record; the content of `kt/` is unchanged except for the optional imports
 
 ## Archive
 
-Zenodo: https://doi.org/10.5281/zenodo.24492767 (version 4.0.0).
+Each GitHub release is archived on Zenodo; the DOI is shown on the repository page.
 
 ## Citation
 

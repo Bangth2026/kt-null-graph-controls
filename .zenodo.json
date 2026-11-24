@@ -1,0 +1,10 @@
+{
+  "upload_type": "software",
+  "title": "kt-null-graph-controls: code and run files for \"When does a concept graph help a knowledge tracer? Null-graph controls by entry point for KC-level first attempts\"",
+  "creators": [{"name": "Truong, Hai Bang", "affiliation": "Saigon International University", "orcid": "0000-0001-5094-3128"}],
+  "description": "<p>Code, run files and analysis scripts for the manuscript \"When Does a Concept Graph Help a Knowledge Tracer? Null-Graph Controls by Entry Point for KC-Level First Attempts\" (H. B. Truong, prepared for IEEE Transactions on Learning Technologies).</p><p>The study fixes a KC-level probe tracer and measures a concept graph against an empty-graph control that keeps every other parameter, a ladder of null graphs, fixed random codes and capacity controls on ten public corpora, with a replication on two held-out corpora under a pre-specified plan. Every run file, analysis output and script behind the tables and figures of the manuscript and its Supplementary Material is under kt/; unit tests in tests/.</p><p>Version 4.0.0 is the first release of this code as a repository of its own. It contains releases 2.0.0 to 3.14.0 of the code, which were developed in the directory kt/ of an earlier repository; no result changes.</p>",
+  "version": "4.0.0",
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": ["knowledge tracing", "concept graph", "null models", "equivalence testing", "learning technologies"]
+}

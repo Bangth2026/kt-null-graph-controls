@@ -3,7 +3,6 @@ message: "If you use this code, please cite the article."
 title: "kt-null-graph-controls: code and run files for null-graph controls in knowledge tracing"
 version: 4.0.0
 date-released: 2026-11-24
-doi: 10.5281/zenodo.24492767
 license: MIT
 repository-code: "https://github.com/Bangth2026/kt-null-graph-controls"
 authors:
