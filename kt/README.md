@@ -4,6 +4,18 @@ From version 4.0.0 this directory is the content of the repository `kt-null-grap
 written when each release was made, inside the earlier repository; paths are relative to `kt/`. Notes that mention the
 manuscript's earlier titles or the earlier repository describe the history of the code.
 
+# Release 4.1.0: reference points for decision agreement, inventory of every run
+
+No new runs and no changed results. Two scripts for the seventh version of the IEEE TLT manuscript:
+
+| Analysis | Script | Output |
+|---|---|---|
+| Chance agreement (1 / number of candidates) and tolerance-based agreement (within 0.01 of the other model's best value; in its top five) of next-KC choices, same decisions and crossed-seed pairs as `r14_analyse.py` (25%, subsample 0, `runs_r13`/`runs_r14` `*_cand.npz`) | `src/r18_decision_agreement.py` | `results_r18/r18_decision_agreement.json` |
+| Inventory of the 2,025 runs of releases 2.0.0 to 3.4.0 (learning curve `r2/runs` with `src = R2`, `runs_r5`, `runs_r6`) by set, model and fraction; manifest of every run file in the archive | `src/r18_run_sets.py` | `results_r18/run_sets_r18.csv`, `results_r18/run_manifest.csv` |
+
+With 3,908 training runs in all: 2,025 (releases 2.0.0 to 3.4.0) + 721 (3.5.0 to 3.8.0) + 630 (3.10.0) + 315 (3.11.0) + 217 (3.13.0).
+The manifest also lists run files that the article does not count (reruns in `*/repro`, `*/base`, and `r2/pyktp/runs`).
+
 # Release 4.0.0: standalone repository
 
 No new runs and no changed results. The code and run files of this study move to their own repository and Zenodo record. The

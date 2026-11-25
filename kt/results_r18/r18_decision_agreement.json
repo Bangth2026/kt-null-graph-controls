@@ -1,0 +1,254 @@
+{
+ "G_j vs E_k (j != k)": {
+  "corpora": 10,
+  "pairs": 60,
+  "n_cand": 202.1031331438058,
+  "chance": 0.00967714518690389,
+  "target_same": 0.04779023684494295,
+  "target_top5": 0.14561394778627867,
+  "target_near_0.01": 0.09867238960269853,
+  "ties_0.01": 7.049829821575412,
+  "easiest_same": 0.2466412649090998,
+  "easiest_top5": 0.46550235814347635,
+  "easiest_near_0.01": 0.31376768243319264,
+  "median_n_cand": 102.52173706093063,
+  "per_corpus": {
+   "algebra05": {
+    "n_cand": 101.0624,
+    "chance": 0.0099,
+    "target_same": 0.016,
+    "target_top5": 0.0705,
+    "target_near_0.01": 0.0512,
+    "ties_0.01": 3.5746,
+    "easiest_same": 0.7565,
+    "easiest_top5": 0.7908,
+    "easiest_near_0.01": 0.7775
+   },
+   "assist09": {
+    "n_cand": 103.9811,
+    "chance": 0.0097,
+    "target_same": 0.0255,
+    "target_top5": 0.1146,
+    "target_near_0.01": 0.0799,
+    "ties_0.01": 4.5618,
+    "easiest_same": 0.2005,
+    "easiest_top5": 0.5033,
+    "easiest_near_0.01": 0.2524
+   },
+   "assist12": {
+    "n_cand": 248.9034,
+    "chance": 0.004,
+    "target_same": 0.0087,
+    "target_top5": 0.038,
+    "target_near_0.01": 0.0648,
+    "ties_0.01": 10.8687,
+    "easiest_same": 0.0669,
+    "easiest_top5": 0.2411,
+    "easiest_near_0.01": 0.1121
+   },
+   "assist15": {
+    "n_cand": 94.2581,
+    "chance": 0.0106,
+    "target_same": 0.0198,
+    "target_top5": 0.0992,
+    "target_near_0.01": 0.078,
+    "ties_0.01": 4.4084,
+    "easiest_same": 0.097,
+    "easiest_top5": 0.3908,
+    "easiest_near_0.01": 0.1732
+   },
+   "assist17": {
+    "n_cand": 67.5972,
+    "chance": 0.0154,
+    "target_same": 0.164,
+    "target_top5": 0.4377,
+    "target_near_0.01": 0.2153,
+    "ties_0.01": 1.9654,
+    "easiest_same": 0.2814,
+    "easiest_top5": 0.6136,
+    "easiest_near_0.01": 0.317
+   },
+   "bridge06": {
+    "n_cand": 482.9032,
+    "chance": 0.0021,
+    "target_same": 0.0023,
+    "target_top5": 0.0135,
+    "target_near_0.01": 0.0301,
+    "ties_0.01": 12.6282,
+    "easiest_same": 0.0213,
+    "easiest_top5": 0.0793,
+    "easiest_near_0.01": 0.0865
+   },
+   "ednet": {
+    "n_cand": 120.029,
+    "chance": 0.0085,
+    "target_same": 0.0678,
+    "target_top5": 0.2014,
+    "target_near_0.01": 0.1599,
+    "ties_0.01": 5.2992,
+    "easiest_same": 0.3471,
+    "easiest_top5": 0.7066,
+    "easiest_near_0.01": 0.4178
+   },
+   "eedi": {
+    "n_cand": 49.5295,
+    "chance": 0.0206,
+    "target_same": 0.1506,
+    "target_top5": 0.3544,
+    "target_near_0.01": 0.2088,
+    "ties_0.01": 2.4348,
+    "easiest_same": 0.5648,
+    "easiest_top5": 0.7806,
+    "easiest_near_0.01": 0.6255
+   },
+   "junyi": {
+    "n_cand": 682.916,
+    "chance": 0.0015,
+    "target_same": 0.002,
+    "target_top5": 0.0106,
+    "target_near_0.01": 0.0417,
+    "ties_0.01": 22.2217,
+    "easiest_same": 0.0651,
+    "easiest_top5": 0.25,
+    "easiest_near_0.01": 0.1862
+   },
+   "statics11": {
+    "n_cand": 69.8515,
+    "chance": 0.0145,
+    "target_same": 0.0212,
+    "target_top5": 0.1165,
+    "target_near_0.01": 0.057,
+    "ties_0.01": 2.5354,
+    "easiest_same": 0.0659,
+    "easiest_top5": 0.2989,
+    "easiest_near_0.01": 0.1894
+   }
+  }
+ },
+ "E_j vs E_k (j != k)": {
+  "corpora": 10,
+  "pairs": 30,
+  "n_cand": 202.1031331438058,
+  "chance": 0.00967714518690389,
+  "target_same": 0.04644039126502855,
+  "target_top5": 0.14002991976899415,
+  "target_near_0.01": 0.09645014953385564,
+  "ties_0.01": 7.002766416235099,
+  "easiest_same": 0.25707795031668695,
+  "easiest_top5": 0.4573064453610506,
+  "easiest_near_0.01": 0.3173613927775152,
+  "median_n_cand": 102.52173706093063,
+  "per_corpus": {
+   "algebra05": {
+    "n_cand": 101.0624,
+    "chance": 0.0099,
+    "target_same": 0.0141,
+    "target_top5": 0.062,
+    "target_near_0.01": 0.0423,
+    "ties_0.01": 3.487,
+    "easiest_same": 0.7416,
+    "easiest_top5": 0.7858,
+    "easiest_near_0.01": 0.7654
+   },
+   "assist09": {
+    "n_cand": 103.9811,
+    "chance": 0.0097,
+    "target_same": 0.0182,
+    "target_top5": 0.1079,
+    "target_near_0.01": 0.0794,
+    "ties_0.01": 4.6445,
+    "easiest_same": 0.1488,
+    "easiest_top5": 0.4529,
+    "easiest_near_0.01": 0.2001
+   },
+   "assist12": {
+    "n_cand": 248.9034,
+    "chance": 0.004,
+    "target_same": 0.0071,
+    "target_top5": 0.0371,
+    "target_near_0.01": 0.0665,
+    "ties_0.01": 11.1354,
+    "easiest_same": 0.0451,
+    "easiest_top5": 0.1883,
+    "easiest_near_0.01": 0.0732
+   },
+   "assist15": {
+    "n_cand": 94.2581,
+    "chance": 0.0106,
+    "target_same": 0.0185,
+    "target_top5": 0.0936,
+    "target_near_0.01": 0.074,
+    "ties_0.01": 4.409,
+    "easiest_same": 0.1016,
+    "easiest_top5": 0.378,
+    "easiest_near_0.01": 0.1741
+   },
+   "assist17": {
+    "n_cand": 67.5972,
+    "chance": 0.0154,
+    "target_same": 0.1408,
+    "target_top5": 0.4094,
+    "target_near_0.01": 0.1917,
+    "ties_0.01": 1.978,
+    "easiest_same": 0.2303,
+    "easiest_top5": 0.5675,
+    "easiest_near_0.01": 0.2631
+   },
+   "bridge06": {
+    "n_cand": 482.9032,
+    "chance": 0.0021,
+    "target_same": 0.0036,
+    "target_top5": 0.0148,
+    "target_near_0.01": 0.0309,
+    "ties_0.01": 12.3191,
+    "easiest_same": 0.0049,
+    "easiest_top5": 0.0234,
+    "easiest_near_0.01": 0.0331
+   },
+   "ednet": {
+    "n_cand": 120.029,
+    "chance": 0.0085,
+    "target_same": 0.0652,
+    "target_top5": 0.183,
+    "target_near_0.01": 0.1478,
+    "ties_0.01": 5.3283,
+    "easiest_same": 0.3882,
+    "easiest_top5": 0.7278,
+    "easiest_near_0.01": 0.4598
+   },
+   "eedi": {
+    "n_cand": 49.5295,
+    "chance": 0.0206,
+    "target_same": 0.1785,
+    "target_top5": 0.3843,
+    "target_near_0.01": 0.2408,
+    "ties_0.01": 2.434,
+    "easiest_same": 0.7208,
+    "easiest_top5": 0.8691,
+    "easiest_near_0.01": 0.7813
+   },
+   "junyi": {
+    "n_cand": 682.916,
+    "chance": 0.0015,
+    "target_same": 0.0025,
+    "target_top5": 0.0113,
+    "target_near_0.01": 0.0403,
+    "ties_0.01": 21.6725,
+    "easiest_same": 0.0524,
+    "easiest_top5": 0.1885,
+    "easiest_near_0.01": 0.1415
+   },
+   "statics11": {
+    "n_cand": 69.8515,
+    "chance": 0.0145,
+    "target_same": 0.0159,
+    "target_top5": 0.0968,
+    "target_near_0.01": 0.0508,
+    "ties_0.01": 2.6198,
+    "easiest_same": 0.137,
+    "easiest_top5": 0.3917,
+    "easiest_near_0.01": 0.2821
+   }
+  }
+ }
+}

@@ -1,0 +1,25 @@
+set,release,model,fraction,device,seeds,conditions,subsamples,runs
+learning curve (kt/r2/runs),2.0.0,AKT,0.1,,0 1 2,AKT,bridge06: 0; statics11: 0,6
+learning curve (kt/r2/runs),2.0.0,AKT,1.0,,subsample,AKT,bridge06: 0; statics11: 0,2
+learning curve (kt/r2/runs),2.0.0,DKT,0.1,,0 1 2,DKT,bridge06: 0; statics11: 0,6
+learning curve (kt/r2/runs),2.0.0,DKT,1.0,,subsample,DKT,bridge06: 0; statics11: 0,2
+learning curve (kt/r2/runs),2.0.0,FKG-KT (probe),0.05,,subsample,P/cag P/empty P/support P/support-pooled,all ten corpora: 0 1 2 3 4,200
+learning curve (kt/r2/runs),2.0.0,FKG-KT (probe),0.1,,0 1 2 3 4,P/cag P/empty P/empty/-att P/empty/-gru P/empty/-hz P/empty/-same P/empty/pc-graded-0.1 P/empty/pc-graded-0.5 P/empty/pc-graded-1 P/empty/pc-permuted-0.1 P/gate2 P/support P/support-pooled,all ten corpora: 0 1 2 3 4,454
+learning curve (kt/r2/runs),2.0.0,FKG-KT (probe),0.25,,subsample,P/cag P/empty P/gate2 P/support P/support-pooled,all ten corpora: 0 1 2,150
+learning curve (kt/r2/runs),2.0.0,FKG-KT (probe),1.0,,subsample,P/cag P/empty P/gate2 P/support,all ten corpora: 0,40
+learning curve (kt/r2/runs),2.0.0,GKT,0.1,,0 1 2,GKT,bridge06: 0; statics11: 0,6
+learning curve (kt/r2/runs),2.0.0,GKT,1.0,,subsample,GKT,statics11: 0,1
+learning curve (kt/r2/runs),2.0.0,R1,0.1,,subsample,R1/none R1/transition:support,assist09: 0,2
+learning curve (kt/r2/runs),2.0.0,RKT,0.1,,0 1 2,RKT,all ten corpora: 0,30
+learning curve (kt/r2/runs),2.0.0,RKT,1.0,,subsample,RKT,all ten corpora: 0,10
+learning curve (kt/r2/runs),2.0.0,SAKT,0.1,,0 1 2,SAKT,bridge06: 0; statics11: 0,6
+learning curve (kt/r2/runs),2.0.0,SAKT,1.0,,subsample,SAKT,bridge06: 0; statics11: 0,2
+learning curve (kt/r2/runs),2.0.0,simpleKT,0.1,,0 1 2,simpleKT,all ten corpora: 0,30
+learning curve (kt/r2/runs),2.0.0,simpleKT,1.0,,subsample,simpleKT,all ten corpora: 0,10
+"controls, epoch budget (kt/runs_r5)",2.1.0,FKG-KT (probe),0.05,,subsample,empty support,all ten corpora: 0 1 2 3 4,100
+"controls, epoch budget (kt/runs_r5)",2.1.0,FKG-KT (probe),0.1,,0 1 2 3 4,empty recency rewired support suprec,all ten corpora: 0 1 2 3 4,326
+"controls, epoch budget (kt/runs_r5)",2.1.0,FKG-KT (probe),0.25,,subsample,empty recency rewired support,all ten corpora: 0 1 2,120
+"controls, epoch budget (kt/runs_r5)",2.1.0,FKG-KT (probe),1.0,,subsample,empty support,all ten corpora: 0,20
+"releases 3.1.0–3.4.0 (kt/runs_r6), steps",3.1.0–3.4.0,FKG-KT (probe),0.05,,subsample,empty er rewired support,algebra05: 0 1 2 3 4; assist09: 0 1; assist12: 0 1; assist15: 0 1; assist17: 0 1 2 3 4; bridge06: 0 1 2 3 4; ednet: 0 1; eedi: 0 1; junyi: 0 1; statics11: 0 1 2 3 4,104
+"releases 3.1.0–3.4.0 (kt/runs_r6), epochs",3.1.0–3.4.0,FKG-KT (probe),0.1,,subsample,degfeat degfeat0 er,all ten corpora: 0 1 2 3 4,110
+"releases 3.1.0–3.4.0 (kt/runs_r6), steps",3.1.0–3.4.0,FKG-KT (probe),0.1,,subsample,degfeat0 empty er er_att er_emb rewired support support_att support_emb,algebra05: 0 1 2 3 4; assist09: 0 1; assist12: 0 1; assist15: 0 1; assist17: 0 1 2 3 4; bridge06: 0 1 2 3 4; ednet: 0 1; eedi: 0 1; junyi: 0 1; statics11: 0 1 2 3 4,288

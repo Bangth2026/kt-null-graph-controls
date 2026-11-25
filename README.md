@@ -53,12 +53,13 @@ manuscript is produced by scripts that run without it.
 
 Releases 2.0.0 to 3.14.0 of this code were developed in the directory `kt/` of the author's repository
 `fuzzy-kg-modularity` and archived on Zenodo with it. Version 4.0.0 moves the code of this study to its own repository and
-Zenodo record; the content of `kt/` is unchanged except for the optional imports above, and the release-2.0.0-era file
+Zenodo record, as a copy of `kt/` without the commit history of the earlier repository; the content of `kt/` is unchanged except for the optional imports above, and the release-2.0.0-era file
 `kt/theory/`, which belongs to another study, is not included.
 
 ## Archive
 
-Zenodo: https://doi.org/10.5281/zenodo.24492979 (all versions); version 4.0.0: https://doi.org/10.5281/zenodo.24492980.
+Zenodo: https://doi.org/10.5281/zenodo.24492979 (all versions); version 4.0.0: https://doi.org/10.5281/zenodo.24492980. Version 4.1.0 adds `kt/src/r18_*.py` and
+`kt/results_r18/` (no new runs).
 
 ## Citation
 
