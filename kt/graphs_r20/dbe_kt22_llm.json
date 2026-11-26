@@ -1,0 +1,353 @@
+{
+"note": "Prerequisite pairs (from, to) among the 59 KCs of the prepared DBE-KT22 corpus, written by the generative AI assistant used in this study (Claude, Anthropic) from the KC names and descriptions of KCs.csv alone, before any training run on DBE-KT22 and without access to the answer logs; while inspecting the release, 15 of the 101 instructor relations of KC_Relationships.csv had been displayed. Not edited afterwards.",
+"pairs": [
+[
+"ACID Properties",
+"Isolation"
+],
+[
+"ACID Properties",
+"Logging"
+],
+[
+"Access Control",
+"Discretionary access control (DAC)"
+],
+[
+"Access Control",
+"Mandatory Access Control (MAC)"
+],
+[
+"Access Control",
+"Role-Based Access Control (RBAC)"
+],
+[
+"Attribute",
+"Key attributes"
+],
+[
+"Attribute",
+"Relation"
+],
+[
+"Attribute",
+"Schema"
+],
+[
+"Attribute",
+"Superkey"
+],
+[
+"Authentication",
+"Access Control"
+],
+[
+"CREATE TABLE",
+"DROP TABLE"
+],
+[
+"CREATE TABLE",
+"INSERT"
+],
+[
+"Cardinality",
+"Cardinality ratios"
+],
+[
+"Cartesian product",
+"Relation"
+],
+[
+"Concurrent Transactions",
+"Isolation"
+],
+[
+"Concurrent Transactions",
+"Two-Phase Locking (2PL) Protocol"
+],
+[
+"DDL",
+"CREATE TABLE"
+],
+[
+"DDL",
+"DROP TABLE"
+],
+[
+"DML",
+"DELETE"
+],
+[
+"DML",
+"INSERT"
+],
+[
+"DML",
+"SELECT"
+],
+[
+"Data type",
+"CREATE TABLE"
+],
+[
+"Database Security",
+"Access Control"
+],
+[
+"Database Security",
+"Authentication"
+],
+[
+"Database Security",
+"SQL Injection"
+],
+[
+"Difference",
+"Relational Algebra"
+],
+[
+"Discretionary access control (DAC)",
+"GRANT"
+],
+[
+"Discretionary access control (DAC)",
+"REVOKE"
+],
+[
+"Discretionary access control (DAC)",
+"Specifying Privileges - Views"
+],
+[
+"Discretionary access control (DAC)",
+"Trojan Horse attacks"
+],
+[
+"Domain",
+"Attribute"
+],
+[
+"Domain",
+"Data type"
+],
+[
+"Entity",
+"Entity-Relationship Model"
+],
+[
+"Entity",
+"Key attributes"
+],
+[
+"Entity",
+"Subclass"
+],
+[
+"Entity",
+"weak entity "
+],
+[
+"Entity-Relationship Model",
+"Cardinality ratios"
+],
+[
+"Entity-Relationship Model",
+"Participation constraints"
+],
+[
+"Entity-Relationship Model",
+"Subclass"
+],
+[
+"Entity-Relationship Model",
+"weak entity "
+],
+[
+"Functional dependencies",
+"Boyce-Codd normal form (BCNF)"
+],
+[
+"Functional dependencies",
+"Dependency preservation"
+],
+[
+"Functional dependencies",
+"Equivalent"
+],
+[
+"Functional dependencies",
+"Normalisation"
+],
+[
+"GRANT",
+"REVOKE"
+],
+[
+"INSERT",
+"DELETE"
+],
+[
+"Intersection",
+"Relational Algebra"
+],
+[
+"Isolation",
+"Read Uncommitted"
+],
+[
+"Join",
+"Lossless Join"
+],
+[
+"Key attributes",
+"weak entity "
+],
+[
+"Normalisation",
+"Boyce-Codd normal form (BCNF)"
+],
+[
+"Normalisation",
+"Dependency preservation"
+],
+[
+"Normalisation",
+"Lossless Join"
+],
+[
+"Participation constraints",
+"Total "
+],
+[
+"Primary Key",
+"Foreign key"
+],
+[
+"Relation",
+"Functional dependencies"
+],
+[
+"Relation",
+"Relational Algebra"
+],
+[
+"Relation",
+"Relational data model"
+],
+[
+"Relation",
+"Schema"
+],
+[
+"Relation",
+"Superkey"
+],
+[
+"Relational Algebra",
+"Join"
+],
+[
+"Relational data model",
+"Relational Algebra"
+],
+[
+"Relational data model",
+"Schema"
+],
+[
+"SELECT",
+"Join"
+],
+[
+"SELECT",
+"SELECT DISTINCT"
+],
+[
+"SELECT",
+"SQL Injection"
+],
+[
+"SELECT",
+"Specifying Privileges - Views"
+],
+[
+"Schema",
+"CREATE TABLE"
+],
+[
+"Schema",
+"Foreign key"
+],
+[
+"Schema",
+"Normalisation"
+],
+[
+"Set",
+"Cardinality"
+],
+[
+"Set",
+"Cartesian product"
+],
+[
+"Set",
+"Difference"
+],
+[
+"Set",
+"Domain"
+],
+[
+"Set",
+"Equality"
+],
+[
+"Set",
+"Intersection"
+],
+[
+"Set",
+"Relation"
+],
+[
+"Set",
+"Tuple"
+],
+[
+"Set",
+"union"
+],
+[
+"Superkey",
+"Boyce-Codd normal form (BCNF)"
+],
+[
+"Superkey",
+"Primary Key"
+],
+[
+"Transactions",
+"ACID Properties"
+],
+[
+"Transactions",
+"Concurrent Transactions"
+],
+[
+"Transactions",
+"Logging"
+],
+[
+"Tuple",
+"Cartesian product"
+],
+[
+"Tuple",
+"Relation"
+],
+[
+"union",
+"Relational Algebra"
+]
+]
+}

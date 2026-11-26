@@ -89,3 +89,52 @@ def test_dp_of_a_larger_graph_keeps_degrees_and_has_no_reciprocal_pair():
     D, _ = rewire(A, seed=1)
     assert (D.sum(0) == A.sum(0)).all() and (D.sum(1) == A.sum(1)).all()
     assert not np.any((D > 0) & (D.T > 0)) and np.all(np.diag(D) == 0)
+
+
+# release 6.0.0 ---------------------------------------------------------------------------------------------------------
+import r20_models as R20M                                    # noqa: E402
+import r20_controls as R20                                   # noqa: E402
+import r20_sim as R20S                                       # noqa: E402
+
+
+def _dag(K=10, seed=0, p=0.25):
+    A = np.triu((np.random.default_rng(seed).random((K, K)) < p).astype(np.float32), 1); return A
+
+
+def test_nca_with_closed_gate_is_the_empty_graph_readout():
+    K = 10; A = _dag(K); m = R20M.NCAKT(K, A, R20.nulls_of(A, 0), np.arange(K) * 5); m.eval()
+    with torch.no_grad():
+        m.gt.bias.fill_(-50.0)                                   # alpha -> 0 at the target
+    q = torch.randint(0, K, (3, 8)); r = torch.randint(0, 2, (3, 8)); qn = torch.randint(0, K, (3, 8))
+    with torch.no_grad():
+        lo, lo0 = m(q, r, qn, return_null=True)
+    assert torch.allclose(lo, lo0, atol=1e-6)
+
+
+def test_nca_nulls_keep_degrees_and_differ_from_dp():
+    A = _dag(14, seed=3, p=0.3); N = R20.nulls_of(A, 0); D, _ = rewire(A, seed=1000)
+    for X in N:
+        assert (X.sum(0) == A.sum(0)).all() and (X.sum(1) == A.sum(1)).all()
+    assert not any(np.array_equal(X, D) for X in N)
+
+
+def test_score_all_matches_forward_for_probe_and_nca():
+    from r5_controls import FKGKT3
+    K = 12; A = _dag(K, seed=1); torch.manual_seed(0)
+    m1 = FKGKT3(K, A)
+    with torch.no_grad(): m1.S.zero_()
+    m2 = R20M.NCAKT(K, A, R20.nulls_of(A, 0), np.arange(K))
+    assert R20S.check_scores(m1, K) < 1e-5 and R20S.check_scores(m2, K) < 1e-5
+
+
+def test_random_q_matrix_keeps_items_per_kc():
+    qk = np.array([0, 0, 1, 2, 2, 2, 3]); perm = np.random.default_rng(4000).permutation(len(qk)); rq = qk[perm]
+    assert (np.bincount(rq, minlength=4) == np.bincount(qk, minlength=4)).all()
+
+
+def test_simulated_learners_share_random_numbers_across_policies():
+    K = 6; A = _dag(K, seed=2, p=0.4)
+    W = dict(A=A, g=np.full(K, .2), s=np.full(K, .1), l=np.full(K, .3), pi=np.full(K, .3), order=np.arange(K), rank=np.linspace(0, 1, K), K=K)
+    a = R20S.Learners(W, 5, seed=1); b = R20S.Learners(W, 5, seed=1)
+    assert (a.m == b.m).all()
+    ch = np.zeros(5, int); assert (a.step(ch) == b.step(ch)).all()

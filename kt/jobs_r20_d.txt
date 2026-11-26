@@ -1,0 +1,135 @@
+--data sim_a09 --frac 0.1 --sub 0 --rep 0 --cond empty --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 0 --cond support_emb --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 0 --cond er_emb --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 0 --cond dp_emb --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 0 --cond true_emb --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 0 --cond true_dp_emb --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 0 --cond nca --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 0 --cond nca_dp --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 0 --cond nca_true --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 1 --cond empty --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 1 --cond support_emb --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 1 --cond er_emb --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 1 --cond dp_emb --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 1 --cond true_emb --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 1 --cond true_dp_emb --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 1 --cond nca --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 1 --cond nca_dp --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 1 --cond nca_true --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 1.0 --sub 0 --rep 0 --cond empty --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 1.0 --sub 0 --rep 0 --cond support_emb --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 1.0 --sub 0 --rep 0 --cond true_emb --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 1.0 --sub 0 --rep 0 --cond true_dp_emb --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 1.0 --sub 0 --rep 0 --cond nca_true --out /home/claude/kt/runs_r20_sim
+--data sim_dbe --frac 0.1 --sub 0 --rep 0 --cond st_true --out /home/claude/kt/runs_r20_sim
+--data sim_dbe --frac 0.1 --sub 0 --rep 0 --cond st_true_dp --out /home/claude/kt/runs_r20_sim
+--data sim_dbe --frac 0.1 --sub 0 --rep 1 --cond st_true --out /home/claude/kt/runs_r20_sim
+--data sim_dbe --frac 0.1 --sub 0 --rep 1 --cond st_true_dp --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 0 --cond st_true --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 0 --cond st_true_dp --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 1 --cond st_true --out /home/claude/kt/runs_r20_sim
+--data sim_a09 --frac 0.1 --sub 0 --rep 1 --cond st_true_dp --out /home/claude/kt/runs_r20_sim
+--data assist09 --sub 0 --cond empty_fa
+--data assist12 --sub 0 --cond empty_fa
+--data assist15 --sub 0 --cond empty_fa
+--data assist17 --sub 0 --cond empty_fa
+--data junyi --sub 0 --cond empty_fa
+--data algebra05 --sub 0 --cond empty_fa
+--data eedi --sub 0 --cond empty_fa
+--data ednet --sub 0 --cond empty_fa
+--data bridge06 --sub 0 --cond empty_fa
+--data statics11 --sub 0 --cond empty_fa
+--data dbe_kt22 --sub 0 --cond empty_fa
+--data assist09 --frac 1.0 --sub 0 --cond nca
+--data assist12 --frac 1.0 --sub 0 --cond nca
+--data assist15 --frac 1.0 --sub 0 --cond nca
+--data assist17 --frac 1.0 --sub 0 --cond nca
+--data junyi --frac 1.0 --sub 0 --cond nca
+--data algebra05 --frac 1.0 --sub 0 --cond nca
+--data eedi --frac 1.0 --sub 0 --cond nca
+--data ednet --frac 1.0 --sub 0 --cond nca
+--data bridge06 --frac 1.0 --sub 0 --cond nca
+--data statics11 --frac 1.0 --sub 0 --cond nca
+--data dbe_kt22 --frac 1.0 --sub 0 --cond nca
+--data dbe_kt22 --frac 1.0 --sub 0 --cond empty
+--data dbe_kt22 --frac 1.0 --sub 0 --cond support
+--data assist09 --frac 1.0 --sub 0 --cond empty_fa
+--data assist12 --frac 1.0 --sub 0 --cond empty_fa
+--data assist15 --frac 1.0 --sub 0 --cond empty_fa
+--data assist17 --frac 1.0 --sub 0 --cond empty_fa
+--data junyi --frac 1.0 --sub 0 --cond empty_fa
+--data algebra05 --frac 1.0 --sub 0 --cond empty_fa
+--data eedi --frac 1.0 --sub 0 --cond empty_fa
+--data ednet --frac 1.0 --sub 0 --cond empty_fa
+--data bridge06 --frac 1.0 --sub 0 --cond empty_fa
+--data statics11 --frac 1.0 --sub 0 --cond empty_fa
+--data dbe_kt22 --frac 1.0 --sub 0 --cond empty_fa
+--data statics11 --sub 1 --cond q_kc
+--data statics11 --sub 1 --cond q_id
+--data statics11 --sub 1 --cond q_qm
+--data statics11 --sub 1 --cond q_rqm
+--data statics11 --sub 1 --cond q_qm_g
+--data statics11 --sub 1 --cond q_qm_dp
+--data statics11 --sub 1 --cond q_diff
+--data assist17 --sub 1 --cond q_kc
+--data assist17 --sub 1 --cond q_id
+--data assist17 --sub 1 --cond q_qm
+--data assist17 --sub 1 --cond q_rqm
+--data assist17 --sub 1 --cond q_qm_g
+--data assist17 --sub 1 --cond q_qm_dp
+--data assist17 --sub 1 --cond q_diff
+--data dbe_kt22 --sub 1 --cond q_kc
+--data dbe_kt22 --sub 1 --cond q_id
+--data dbe_kt22 --sub 1 --cond q_qm
+--data dbe_kt22 --sub 1 --cond q_rqm
+--data dbe_kt22 --sub 1 --cond q_qm_g
+--data dbe_kt22 --sub 1 --cond q_qm_dp
+--data dbe_kt22 --sub 1 --cond q_diff
+--data assist09 --sub 1 --cond nca
+--data assist12 --sub 1 --cond nca
+--data assist15 --sub 1 --cond nca
+--data assist17 --sub 1 --cond nca
+--data assist17 --sub 2 --cond nca
+--data assist17 --sub 3 --cond nca
+--data assist17 --sub 4 --cond nca
+--data junyi --sub 1 --cond nca
+--data algebra05 --sub 1 --cond nca
+--data algebra05 --sub 2 --cond nca
+--data algebra05 --sub 3 --cond nca
+--data algebra05 --sub 4 --cond nca
+--data eedi --sub 1 --cond nca
+--data ednet --sub 1 --cond nca
+--data bridge06 --sub 1 --cond nca
+--data bridge06 --sub 2 --cond nca
+--data bridge06 --sub 3 --cond nca
+--data bridge06 --sub 4 --cond nca
+--data statics11 --sub 1 --cond nca
+--data statics11 --sub 2 --cond nca
+--data statics11 --sub 3 --cond nca
+--data statics11 --sub 4 --cond nca
+--data assist09 --sub 1 --cond empty_fa
+--data assist12 --sub 1 --cond empty_fa
+--data assist15 --sub 1 --cond empty_fa
+--data assist17 --sub 1 --cond empty_fa
+--data assist17 --sub 2 --cond empty_fa
+--data assist17 --sub 3 --cond empty_fa
+--data assist17 --sub 4 --cond empty_fa
+--data junyi --sub 1 --cond empty_fa
+--data algebra05 --sub 1 --cond empty_fa
+--data algebra05 --sub 2 --cond empty_fa
+--data algebra05 --sub 3 --cond empty_fa
+--data algebra05 --sub 4 --cond empty_fa
+--data eedi --sub 1 --cond empty_fa
+--data ednet --sub 1 --cond empty_fa
+--data bridge06 --sub 1 --cond empty_fa
+--data bridge06 --sub 2 --cond empty_fa
+--data bridge06 --sub 3 --cond empty_fa
+--data bridge06 --sub 4 --cond empty_fa
+--data statics11 --sub 1 --cond empty_fa
+--data statics11 --sub 2 --cond empty_fa
+--data statics11 --sub 3 --cond empty_fa
+--data statics11 --sub 4 --cond empty_fa
+--data dbe_kt22 --sub 1 --cond empty_fa
+--data dbe_kt22 --sub 2 --cond empty_fa
+--data dbe_kt22 --sub 3 --cond empty_fa
+--data dbe_kt22 --sub 4 --cond empty_fa

@@ -28,6 +28,7 @@ Everything is under `kt/` so that the paths cited in the manuscript and its Supp
 | `kt/runs*/`, `kt/r2/` | one JSON file per training run (and prediction files where kept) |
 | `kt/results*/` | analysis outputs behind every table and figure |
 | `kt/src/r19_*.py`, `kt/runs_r19/`, `kt/results_r19/` | release 5.0.0 (UMUAI revision): runs, analyses and their outputs |
+| `kt/src/r20_*.py`, `kt/src/prep_r20.py`, `kt/runs_r20/`, `kt/runs_r20_sim/`, `kt/results_r20/` | release 6.0.0 (second UMUAI version): NCA-KT, item level, DBE-KT22, simulated worlds and closed loop |
 | `kt/prereg/` | the analysis plan of the replication and its SHA-256 checksum |
 | `kt/README.md` | every release, script and run set, in the order in which they were made |
 | `tests/test_kt_graphs.py` | unit tests of the graph constructions and null graphs |
@@ -66,15 +67,15 @@ Zenodo record, as a copy of `kt/` without the commit history of the earlier repo
 
 Zenodo: https://doi.org/10.5281/zenodo.24492979 (all versions); version 4.0.0: https://doi.org/10.5281/zenodo.24492980. Version 4.1.0 adds `kt/src/r18_*.py` and
 `kt/results_r18/` (no new runs). Version 5.0.0 adds `kt/src/r19_*.py`, `kt/src/prep_r19.py`, `kt/runs_r19/` and `kt/results_r19/`
-(new runs; see `kt/README.md`, release 5.0.0).
+(new runs; see `kt/README.md`, release 5.0.0). Version 6.0.0 adds `kt/src/r20_*.py`, `kt/src/prep_r20.py`, `kt/runs_r20/`, `kt/runs_r20_sim/` and `kt/results_r20/` (new runs; see `kt/README.md`, release 6.0.0).
 
-## Raw data used to rebuild the corpora (release 5.0.0)
+## Raw data used to rebuild the corpora (releases 5.0.0 and 6.0.0)
 
 Public copies on Hugging Face: `Lucy9999/assist2009` (`skill_builder_data.csv`, used as `skill_builder_data_corrected.csv`),
 `Lucy9999/assist2012` (zip of the 2012-2013 file), `Lucy9999/assist2015`, `Lucy9999/assist2017`
 (`Released Full Dataset/anonymized_full_release_competition_dataset.csv`), `Lucy9999/junyi2015`, `Lucy9999/AL2005`,
 `Lucy9999/BD2006`, `Lucy9999/NIPS34` (`data.zip`), `Lucy9999/statics2011`, `Lucy9999/EdNet-KT1`, `Unggi/ednet5000_raw_data`
-(`ednet_content/questions.csv`) and `Atomi/XES3G5M_interaction_sequences`. Every rebuilt corpus matches Table 1 of the
+(`ednet_content/questions.csv`), `Atomi/XES3G5M_interaction_sequences` and, from release 6.0.0, `Unggi/dbe-kt22_raw_data` (DBE-KT22). Every rebuilt corpus matches Table 1 of the
 manuscript, and the empty-graph control on subsample 0 reproduces its archived test AUC to the last digit (`kt/runs_r19/repro/`).
 
 ## Citation
