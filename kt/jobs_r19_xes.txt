@@ -1,0 +1,5 @@
+--data xes3g5m --sub 0 --cond empty --out /home/claude/kt/runs_r19/repro
+--data xes3g5m1 --sub 0 --cond empty
+--data xes3g5m1 --sub 0 --cond support
+--data xes3g5m1 --sub 1 --cond empty
+--data xes3g5m1 --sub 1 --cond support

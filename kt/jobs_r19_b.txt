@@ -1,0 +1,157 @@
+--data xes3g5m --sub 0 --cond empty --out /home/claude/kt/runs_r19/repro
+--data xes3g5m1 --sub 0 --cond empty
+--data xes3g5m1 --sub 0 --cond support
+--data xes3g5m1 --sub 1 --cond empty
+--data xes3g5m1 --sub 1 --cond support
+--data assist09 --sub 1 --cond g100_emb
+--data assist09 --sub 1 --cond dp100_emb
+--data assist09 --sub 1 --cond st_g100
+--data assist09 --sub 1 --cond st_dp100
+--data assist12 --sub 1 --cond g100_emb
+--data assist12 --sub 1 --cond dp100_emb
+--data assist12 --sub 1 --cond st_g100
+--data assist12 --sub 1 --cond st_dp100
+--data assist15 --sub 1 --cond g100_emb
+--data assist15 --sub 1 --cond dp100_emb
+--data assist15 --sub 1 --cond st_g100
+--data assist15 --sub 1 --cond st_dp100
+--data assist17 --sub 1 --cond g100_emb
+--data assist17 --sub 1 --cond dp100_emb
+--data assist17 --sub 1 --cond st_g100
+--data assist17 --sub 1 --cond st_dp100
+--data junyi --sub 1 --cond g100_emb
+--data junyi --sub 1 --cond dp100_emb
+--data junyi --sub 1 --cond st_g100
+--data junyi --sub 1 --cond st_dp100
+--data algebra05 --sub 1 --cond g100_emb
+--data algebra05 --sub 1 --cond dp100_emb
+--data algebra05 --sub 1 --cond st_g100
+--data algebra05 --sub 1 --cond st_dp100
+--data eedi --sub 1 --cond g100_emb
+--data eedi --sub 1 --cond dp100_emb
+--data eedi --sub 1 --cond st_g100
+--data eedi --sub 1 --cond st_dp100
+--data ednet --sub 1 --cond g100_emb
+--data ednet --sub 1 --cond dp100_emb
+--data ednet --sub 1 --cond st_g100
+--data ednet --sub 1 --cond st_dp100
+--data bridge06 --sub 1 --cond g100_emb
+--data bridge06 --sub 1 --cond dp100_emb
+--data bridge06 --sub 1 --cond st_g100
+--data bridge06 --sub 1 --cond st_dp100
+--data statics11 --sub 1 --cond g100_emb
+--data statics11 --sub 1 --cond dp100_emb
+--data statics11 --sub 1 --cond st_g100
+--data statics11 --sub 1 --cond st_dp100
+--data assist09 --sub 1 --cond empty --rep 1
+--data assist09 --sub 1 --cond support --rep 1
+--data assist09 --sub 1 --cond empty --rep 2
+--data assist09 --sub 1 --cond support --rep 2
+--data assist12 --sub 1 --cond empty --rep 1
+--data assist12 --sub 1 --cond support --rep 1
+--data assist12 --sub 1 --cond empty --rep 2
+--data assist12 --sub 1 --cond support --rep 2
+--data assist15 --sub 1 --cond empty --rep 1
+--data assist15 --sub 1 --cond support --rep 1
+--data assist15 --sub 1 --cond empty --rep 2
+--data assist15 --sub 1 --cond support --rep 2
+--data junyi --sub 1 --cond empty --rep 1
+--data junyi --sub 1 --cond support --rep 1
+--data junyi --sub 1 --cond empty --rep 2
+--data junyi --sub 1 --cond support --rep 2
+--data eedi --sub 1 --cond empty --rep 1
+--data eedi --sub 1 --cond support --rep 1
+--data eedi --sub 1 --cond empty --rep 2
+--data eedi --sub 1 --cond support --rep 2
+--data ednet --sub 1 --cond empty --rep 1
+--data ednet --sub 1 --cond support --rep 1
+--data ednet --sub 1 --cond empty --rep 2
+--data ednet --sub 1 --cond support --rep 2
+--data assist09 --sub 1 --cond pdkt_empty
+--data assist09 --sub 1 --cond pdkt_er
+--data assist09 --sub 1 --cond pdkt_dp
+--data assist09 --sub 1 --cond pdkt_support
+--data assist12 --sub 1 --cond pdkt_empty
+--data assist12 --sub 1 --cond pdkt_er
+--data assist12 --sub 1 --cond pdkt_dp
+--data assist12 --sub 1 --cond pdkt_support
+--data assist15 --sub 1 --cond pdkt_empty
+--data assist15 --sub 1 --cond pdkt_er
+--data assist15 --sub 1 --cond pdkt_dp
+--data assist15 --sub 1 --cond pdkt_support
+--data assist17 --sub 1 --cond pdkt_empty
+--data assist17 --sub 1 --cond pdkt_er
+--data assist17 --sub 1 --cond pdkt_dp
+--data assist17 --sub 1 --cond pdkt_support
+--data junyi --sub 1 --cond pdkt_empty
+--data junyi --sub 1 --cond pdkt_er
+--data junyi --sub 1 --cond pdkt_dp
+--data junyi --sub 1 --cond pdkt_support
+--data algebra05 --sub 1 --cond pdkt_empty
+--data algebra05 --sub 1 --cond pdkt_er
+--data algebra05 --sub 1 --cond pdkt_dp
+--data algebra05 --sub 1 --cond pdkt_support
+--data eedi --sub 1 --cond pdkt_empty
+--data eedi --sub 1 --cond pdkt_er
+--data eedi --sub 1 --cond pdkt_dp
+--data eedi --sub 1 --cond pdkt_support
+--data ednet --sub 1 --cond pdkt_empty
+--data ednet --sub 1 --cond pdkt_er
+--data ednet --sub 1 --cond pdkt_dp
+--data ednet --sub 1 --cond pdkt_support
+--data bridge06 --sub 1 --cond pdkt_empty
+--data bridge06 --sub 1 --cond pdkt_er
+--data bridge06 --sub 1 --cond pdkt_dp
+--data bridge06 --sub 1 --cond pdkt_support
+--data statics11 --sub 1 --cond pdkt_empty
+--data statics11 --sub 1 --cond pdkt_er
+--data statics11 --sub 1 --cond pdkt_dp
+--data statics11 --sub 1 --cond pdkt_support
+--data statics11 --sub 2 --cond g100_emb
+--data statics11 --sub 2 --cond dp100_emb
+--data statics11 --sub 2 --cond st_g100
+--data statics11 --sub 2 --cond st_dp100
+--data algebra05 --sub 2 --cond g100_emb
+--data algebra05 --sub 2 --cond dp100_emb
+--data algebra05 --sub 2 --cond st_g100
+--data algebra05 --sub 2 --cond st_dp100
+--data bridge06 --sub 2 --cond g100_emb
+--data bridge06 --sub 2 --cond dp100_emb
+--data bridge06 --sub 2 --cond st_g100
+--data bridge06 --sub 2 --cond st_dp100
+--data assist17 --sub 2 --cond g100_emb
+--data assist17 --sub 2 --cond dp100_emb
+--data assist17 --sub 2 --cond st_g100
+--data assist17 --sub 2 --cond st_dp100
+--data statics11 --sub 3 --cond g100_emb
+--data statics11 --sub 3 --cond dp100_emb
+--data statics11 --sub 3 --cond st_g100
+--data statics11 --sub 3 --cond st_dp100
+--data algebra05 --sub 3 --cond g100_emb
+--data algebra05 --sub 3 --cond dp100_emb
+--data algebra05 --sub 3 --cond st_g100
+--data algebra05 --sub 3 --cond st_dp100
+--data bridge06 --sub 3 --cond g100_emb
+--data bridge06 --sub 3 --cond dp100_emb
+--data bridge06 --sub 3 --cond st_g100
+--data bridge06 --sub 3 --cond st_dp100
+--data assist17 --sub 3 --cond g100_emb
+--data assist17 --sub 3 --cond dp100_emb
+--data assist17 --sub 3 --cond st_g100
+--data assist17 --sub 3 --cond st_dp100
+--data statics11 --sub 4 --cond g100_emb
+--data statics11 --sub 4 --cond dp100_emb
+--data statics11 --sub 4 --cond st_g100
+--data statics11 --sub 4 --cond st_dp100
+--data algebra05 --sub 4 --cond g100_emb
+--data algebra05 --sub 4 --cond dp100_emb
+--data algebra05 --sub 4 --cond st_g100
+--data algebra05 --sub 4 --cond st_dp100
+--data bridge06 --sub 4 --cond g100_emb
+--data bridge06 --sub 4 --cond dp100_emb
+--data bridge06 --sub 4 --cond st_g100
+--data bridge06 --sub 4 --cond st_dp100
+--data assist17 --sub 4 --cond g100_emb
+--data assist17 --sub 4 --cond dp100_emb
+--data assist17 --sub 4 --cond st_g100
+--data assist17 --sub 4 --cond st_dp100

@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the article."
 title: "kt-null-graph-controls: code and run files for null-graph controls in knowledge tracing"
-version: 4.1.0
-date-released: 2026-11-25
+version: 5.0.0
+date-released: 2026-11-26
 license: MIT
 doi: 10.5281/zenodo.24492979
 repository-code: "https://github.com/Bangth2026/kt-null-graph-controls"
@@ -13,8 +13,8 @@ authors:
     affiliation: "Saigon International University"
 preferred-citation:
   type: article
-  title: "When does a concept graph help a knowledge tracer? Null-graph controls by entry point for KC-level first attempts"
+  title: "When does a concept graph help a knowledge tracer? Entry-point null-graph controls and decision stability for KC-level learner models"
   authors:
     - family-names: Truong
       given-names: Hai Bang
-  notes: "manuscript prepared for IEEE Transactions on Learning Technologies"
+  notes: "manuscript under revision for User Modeling and User-Adapted Interaction"

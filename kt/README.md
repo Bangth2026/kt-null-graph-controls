@@ -4,6 +4,41 @@ From version 4.0.0 this directory is the content of the repository `kt-null-grap
 written when each release was made, inside the earlier repository; paths are relative to `kt/`. Notes that mention the
 manuscript's earlier titles or the earlier repository describe the history of the code.
 
+# Release 5.0.0: runs and analyses of the revision for User Modeling and User-Adapted Interaction (UMUAI)
+
+New training runs (kt/runs_r19, 142 run files; 11 more in kt/runs_r19/repro), all on a CPU with one thread, under the
+update budget of release 3.10.0 (at most 2,000 updates, validation every 25, patience 8), 10% of the training learners unless stated.
+Every condition of r14_controls.py is passed through r19_controls.py unchanged, so archived conditions reproduce their test AUC.
+
+| Run set | Conditions | Units | Script |
+|---|---|---|---|
+| Transfer of structure: support graph of all training learners (G100) given to the probe at 10% | `g100_emb`, `dp100_emb` (its degree-preserving rewiring), `st_g100`, `st_dp100` | subsample 0 of ten corpora | `src/r19_controls.py` |
+| PDKT (Chen et al. 2018): graph in the training loss, KC-level ranking penalty, lambda = 1, at most 512 edges per update | `pdkt_empty` (= DKT), `pdkt_er`, `pdkt_dp`, `pdkt_support` | subsample 0 of ten corpora | `src/r19_controls.py` |
+| Three training seeds per subsample | `empty`, `support` with `--rep 1, 2` (seeds 100, 200) | subsample 0 of the six larger corpora (the four small corpora have them since release 3.6.0) | `src/r19_controls.py` |
+| 5% probes for the decision analysis, with candidate scores (`_cand.npz`) | `empty`, `--rep 0, 1, 2`, `--dump` | subsample 0 of ten corpora | `src/r19_controls.py` |
+| 500-interaction cap on two larger corpora | `KT_MAXLEN=500`: `empty`, `support_emb` | ASSISTments 2012 and Eedi, subsample 0 | `src/r19_controls.py` |
+| XES3G5M without multi-KC questions | `empty`, `support` on `xes3g5m1` | subsamples 0 and 1 | `src/prep_r19.py`, `src/r19_controls.py` |
+| Reproduction of archived runs on the rebuilt corpora | `empty` | subsample 0 | `runs_r19/repro/` |
+
+Job lists: `jobs_r19.txt`, `jobs_r19_len500.txt`, `jobs_r19_xes.txt`, `jobs_r19_b.txt` (the last was only partly run: extensions to
+subsample 1, not used by the manuscript). Queue: `bash src/r19_runq.sh <jobs file> 2`.
+
+Analyses (no training):
+
+| Analysis | Script | Output |
+|---|---|---|
+| First-attempt references (KC rate, PFA-style logistic model) and pooled, per-learner and within-KC AUC on the 32 units at 10%; graph quality by training size (edges, recall and precision against G100, reciprocal pairs of G and DP(G)) | `src/r19_baselines.py` | `results_r19/baselines.json`, `results_r19/graph_quality.json` |
+| Primary comparison with four interval methods, balanced 50-unit design, three-seed design and delta_seed, Benjamini-Hochberg over the exploratory terms, transfer, PDKT, cap 500, XES3G5M without multi-KC questions | `src/r19_stats.py` | `results_r19/stats.json` |
+| Next-KC decisions: 28 decision models per corpus (5%, 25%, 100%), Rasch and PFA-style learning simulators, target, easiest and stabilized target rules (tolerance band and curriculum tie-break), agreement, regret against first-attempt AUC | `src/r19_decisions.py` | `results_r19/decisions.json`, `results_r19/decisions_rows.csv` |
+| Fig. 5 of the revision | `src/r19_figures.py` | `results_r19/fig5_decisions.png` |
+| Online Resource 4 of the revision | `src/r19_supplement.py` | `results_r19/online_resource_4.md` |
+| List of the runs of this release | `src/r19_run_list.py` | `results_r19/run_list_r19.csv` |
+
+Data: the corpora were rebuilt from the public copies listed in the top-level README (Hugging Face); every rebuilt corpus
+matches Table 1 of the manuscript, and the empty-graph control on subsample 0 reproduces the archived test AUC to the last digit
+(`runs_r19/repro/`; EdNet against the rebuilt copy of release 3.7.0). Unit tests: `tests/test_kt_graphs.py` adds tests of the
+PDKT penalty, the stabilized rule and DP(G) of a larger graph (9 tests pass).
+
 # Release 4.1.0: reference points for decision agreement, inventory of every run
 
 No new runs and no changed results. Two scripts for the seventh version of the IEEE TLT manuscript:

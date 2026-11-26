@@ -61,3 +61,31 @@ def test_top_pairs_and_corr_graph():
     assert A.sum() == 11 and not np.any((A > 0) & (A.T > 0)) and np.all(np.diag(A) == 0)
     df, K = logs(); C = R16.corr_graph(df, K, 15, min_common=5)
     assert C.sum() == 15 and not np.any((C > 0) & (C.T > 0))
+
+
+# release 5.0.0 ---------------------------------------------------------------------------------------------------------
+import r19_controls as R19                                   # noqa: E402
+import r19_decisions as R19D                                 # noqa: E402
+
+
+def test_pdkt_penalty_zero_without_edges_and_positive_when_violated():
+    K = 6; q = torch.randint(0, K, (4, 10)); r = torch.randint(0, 2, (4, 10)); rng = np.random.default_rng(0)
+    m0 = R19.PDKT(K, np.zeros((K, K), np.float32)); assert float(m0.penalty(q, r, rng)) == 0.0
+    A = np.zeros((K, K), np.float32); A[0, 1] = 1; m = R19.PDKT(K, A)
+    with torch.no_grad():
+        m.out.weight.zero_(); m.out.bias.zero_(); m.out.bias[1] = 3.0      # P(1) > P(0): the constraint 0 -> 1 is violated
+    m.eval(); assert float(m.penalty(q, r, rng)) > 0.4
+
+
+def test_stabilised_rule_breaks_near_ties_by_curriculum_order():
+    a = np.array([0.651, 0.655, 0.70, 0.30]); cnd = np.ones(4, bool); rank = np.array([0.9, 0.1, 0.0, 0.5])
+    assert R19D.choose(a, cnd, 'target', rank) == 0
+    assert R19D.choose(a, cnd, 'target_tb0.01', rank) == 1          # 0.655 is within 0.01 of the best and met earlier
+    assert R19D.choose(a, cnd, 'easiest', rank) == 2
+
+
+def test_dp_of_a_larger_graph_keeps_degrees_and_has_no_reciprocal_pair():
+    df, K = logs(seed=3, n=200); A = (transition_support(df, K, s=2) > 0).astype(np.float32)
+    D, _ = rewire(A, seed=1)
+    assert (D.sum(0) == A.sum(0)).all() and (D.sum(1) == A.sum(1)).all()
+    assert not np.any((D > 0) & (D.T > 0)) and np.all(np.diag(D) == 0)

@@ -1,0 +1,8 @@
+--data assist12 --sub 0 --cond empty
+--data assist12 --sub 0 --cond support_emb
+--data assist12 --sub 1 --cond empty
+--data assist12 --sub 1 --cond support_emb
+--data eedi --sub 0 --cond empty
+--data eedi --sub 0 --cond support_emb
+--data eedi --sub 1 --cond empty
+--data eedi --sub 1 --cond support_emb

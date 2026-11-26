@@ -4,13 +4,18 @@
 
 Code, run files and analysis scripts for
 
-> Hai Bang Truong. *When Does a Concept Graph Help a Knowledge Tracer? Null-Graph Controls by Entry Point for KC-Level First
-> Attempts.* Manuscript prepared for IEEE Transactions on Learning Technologies.
+> Hai Bang Truong. *When does a concept graph help a knowledge tracer? Entry-point null-graph controls and decision stability
+> for KC-level learner models.* Manuscript under revision for User Modeling and User-Adapted Interaction (UMUAI).
 
 The study fixes a KC-level probe tracer, changes only the graph it receives and measures the graph against an empty-graph
 control that keeps every other parameter, a ladder of null graphs (uniform mixing, Erdős–Rényi, degree-preserving and
 unit-preserving rewiring), fixed random codes per KC and capacity controls, on ten public corpora, with a replication on two
-held-out corpora under a pre-specified plan (`kt/prereg/`).
+held-out corpora under a pre-specified plan (`kt/prereg/`). Release 5.0.0 adds the runs and analyses of the UMUAI revision:
+a graph built from all training learners given to a tracer trained on 10% of them (transfer of structure), the null-graph
+ladder inside PDKT (graph in the training loss), three training seeds per subsample, a 500-interaction cap on two larger
+corpora, XES3G5M without multi-KC questions, simple first-attempt references (KC rate, PFA-style model) with pooled,
+per-learner and within-KC AUC, graph quality by training size, and next-KC decisions under a Rasch and a learning
+simulator, with a stabilized target rule (tolerance band and curriculum tie-break).
 
 ## Layout
 
@@ -22,6 +27,7 @@ Everything is under `kt/` so that the paths cited in the manuscript and its Supp
 | `kt/src/` | data preparation (`prep.py`, `prep_junyi_lowmem.py`, `prep_r14.py`), models (`models.py`), the probe and its controls (`r5_controls.py` to `r16_controls.py`), analyses (`r*_analyse.py`, `r15_regret.py`, `r16_decision.py`, `r17_between_corpora.py`), figures |
 | `kt/runs*/`, `kt/r2/` | one JSON file per training run (and prediction files where kept) |
 | `kt/results*/` | analysis outputs behind every table and figure |
+| `kt/src/r19_*.py`, `kt/runs_r19/`, `kt/results_r19/` | release 5.0.0 (UMUAI revision): runs, analyses and their outputs |
 | `kt/prereg/` | the analysis plan of the replication and its SHA-256 checksum |
 | `kt/README.md` | every release, script and run set, in the order in which they were made |
 | `tests/test_kt_graphs.py` | unit tests of the graph constructions and null graphs |
@@ -59,7 +65,17 @@ Zenodo record, as a copy of `kt/` without the commit history of the earlier repo
 ## Archive
 
 Zenodo: https://doi.org/10.5281/zenodo.24492979 (all versions); version 4.0.0: https://doi.org/10.5281/zenodo.24492980. Version 4.1.0 adds `kt/src/r18_*.py` and
-`kt/results_r18/` (no new runs).
+`kt/results_r18/` (no new runs). Version 5.0.0 adds `kt/src/r19_*.py`, `kt/src/prep_r19.py`, `kt/runs_r19/` and `kt/results_r19/`
+(new runs; see `kt/README.md`, release 5.0.0).
+
+## Raw data used to rebuild the corpora (release 5.0.0)
+
+Public copies on Hugging Face: `Lucy9999/assist2009` (`skill_builder_data.csv`, used as `skill_builder_data_corrected.csv`),
+`Lucy9999/assist2012` (zip of the 2012-2013 file), `Lucy9999/assist2015`, `Lucy9999/assist2017`
+(`Released Full Dataset/anonymized_full_release_competition_dataset.csv`), `Lucy9999/junyi2015`, `Lucy9999/AL2005`,
+`Lucy9999/BD2006`, `Lucy9999/NIPS34` (`data.zip`), `Lucy9999/statics2011`, `Lucy9999/EdNet-KT1`, `Unggi/ednet5000_raw_data`
+(`ednet_content/questions.csv`) and `Atomi/XES3G5M_interaction_sequences`. Every rebuilt corpus matches Table 1 of the
+manuscript, and the empty-graph control on subsample 0 reproduces its archived test AUC to the last digit (`kt/runs_r19/repro/`).
 
 ## Citation
 
