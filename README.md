@@ -31,6 +31,7 @@ Everything is under `kt/` so that the paths cited in the manuscript and its Supp
 | `kt/src/r20_*.py`, `kt/src/prep_r20.py`, `kt/runs_r20/`, `kt/runs_r20_sim/`, `kt/results_r20/` | release 6.0.0 (second UMUAI version): NCA-KT, item level, DBE-KT22, simulated worlds and closed loop |
 | `kt/src/r21_*.py`, `kt/runs_r21_sim/`, `kt/runs_r21/`, `kt/results_r21/`, `kt/graphs_r21/` | release 7.0.0 (third UMUAI version): positive control in the simulated worlds, gated decisions, XES3G5M KC routes, power, seed ensembles, KC-rate rule |
 | `kt/src/r22_*.py`, `kt/runs_r22_sim/`, `kt/runs_r22/`, `kt/results_r22/` | release 8.0.0 (fifth UMUAI version): third simulated world, MIRT simulator, chance-corrected agreement and restricted candidate sets, closed loop with 24 tracers per world, partial Q-matrix perturbation, t-based power |
+| `kt/src/r23_*.py`, `kt/runs_r23_sim/`, `kt/runs_r23/`, `kt/results_r23/` | release 9.0.0 (sixth UMUAI version): gain rule, out-of-order shares in real corpora, sim-DBE-mix with five subsamples and its own learners in the closed loop, Junyi map over five subsamples, seed variance |
 | `kt/prereg/` | the analysis plan of the replication and its SHA-256 checksum |
 | `kt/README.md` | every release, script and run set, in the order in which they were made |
 | `tests/test_kt_graphs.py` | unit tests of the graph constructions and null graphs |
@@ -69,9 +70,9 @@ Zenodo record, as a copy of `kt/` without the commit history of the earlier repo
 
 Zenodo: https://doi.org/10.5281/zenodo.24492979 (all versions); version 4.0.0: https://doi.org/10.5281/zenodo.24492980. Version 4.1.0 adds `kt/src/r18_*.py` and
 `kt/results_r18/` (no new runs). Version 5.0.0 adds `kt/src/r19_*.py`, `kt/src/prep_r19.py`, `kt/runs_r19/` and `kt/results_r19/`
-(new runs; see `kt/README.md`, release 5.0.0). Version 6.0.0 adds `kt/src/r20_*.py`, `kt/src/prep_r20.py`, `kt/runs_r20/`, `kt/runs_r20_sim/` and `kt/results_r20/` (new runs; see `kt/README.md`, release 6.0.0). Version 7.0.0 adds `kt/src/r21_*.py`, `kt/runs_r21_sim/`, `kt/runs_r21/`, `kt/results_r21/` and `kt/graphs_r21/` (new runs; see `kt/README.md`, release 7.0.0). Version 8.0.0 adds `kt/src/r22_*.py`, `kt/runs_r22_sim/`, `kt/runs_r22/` and `kt/results_r22/` (new runs; see `kt/README.md`, release 8.0.0).
+(new runs; see `kt/README.md`, release 5.0.0). Version 6.0.0 adds `kt/src/r20_*.py`, `kt/src/prep_r20.py`, `kt/runs_r20/`, `kt/runs_r20_sim/` and `kt/results_r20/` (new runs; see `kt/README.md`, release 6.0.0). Version 7.0.0 adds `kt/src/r21_*.py`, `kt/runs_r21_sim/`, `kt/runs_r21/`, `kt/results_r21/` and `kt/graphs_r21/` (new runs; see `kt/README.md`, release 7.0.0). Version 8.0.0 adds `kt/src/r22_*.py`, `kt/runs_r22_sim/`, `kt/runs_r22/` and `kt/results_r22/` (new runs; see `kt/README.md`, release 8.0.0). Version 9.0.0 adds `kt/src/r23_*.py`, `kt/runs_r23_sim/`, `kt/runs_r23/` and `kt/results_r23/` (new runs; see `kt/README.md`, release 9.0.0).
 
-## Raw data used to rebuild the corpora (releases 5.0.0 to 8.0.0)
+## Raw data used to rebuild the corpora (releases 5.0.0 to 9.0.0)
 
 Public copies on Hugging Face: `Lucy9999/assist2009` (`skill_builder_data.csv`, used as `skill_builder_data_corrected.csv`),
 `Lucy9999/assist2012` (zip of the 2012-2013 file), `Lucy9999/assist2015`, `Lucy9999/assist2017`

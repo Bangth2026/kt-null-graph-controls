@@ -205,3 +205,21 @@ def test_window_candidates_are_unseen_and_at_most_ten():
     win, uni = D.candidate_sets(seen, cur, rank, None)
     assert uni is None and (win & seen).sum() == 0 and win.sum(-1).max() <= 10
 
+
+
+# ---------------------------------------------------------------- release 9.0.0
+def test_gain_rollout_equals_scoring_the_extended_history():
+    import glob, torch, r23_gain as G
+    f = sorted(glob.glob('/home/claude/kt/runs_r2*_sim/sim_dbe__f10__s0__empty__steps.pt'))
+    if not f: return
+    m = torch.load(f[0], weights_only=False)
+    assert G.check_gain(m, m.K) < 1e-5
+
+
+def test_order_stats_counts_unattempted_and_not_passed_prerequisites():
+    import numpy as np, pandas as pd, r23_order as O
+    A = np.zeros((3, 3)); A[0, 1] = 1                                    # 0 is a prerequisite of 1
+    df = pd.DataFrame(dict(user=['a'] * 3 + ['b'] * 4, kc=[1, 0, 2, 0, 0, 1, 2], correct=[0, 1, 1, 1, 1, 1, 0], order=[0, 1, 2, 0, 1, 2, 3]))
+    r = O.order_stats(df, A)
+    assert r['with_prerequisites'] == 2 and r['share_unattempted'] == 0.5 and r['share_not_passed'] == 0.5
+    assert r['correct_if_unattempted'] == 0.0 and r['correct_if_passed'] == 1.0

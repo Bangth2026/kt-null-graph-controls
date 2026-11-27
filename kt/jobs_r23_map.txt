@@ -1,0 +1,4 @@
+--data junyi --frac 0.1 --sub 1 --cond map_dp_emb --out /home/claude/kt/runs_r23
+--data junyi --frac 0.1 --sub 2 --cond map_dp_emb --out /home/claude/kt/runs_r23
+--data junyi --frac 0.1 --sub 3 --cond map_dp_emb --out /home/claude/kt/runs_r23
+--data junyi --frac 0.1 --sub 4 --cond map_dp_emb --out /home/claude/kt/runs_r23

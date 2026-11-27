@@ -4,6 +4,34 @@ From version 4.0.0 this directory is the content of the repository `kt-null-grap
 written when each release was made, inside the earlier repository; paths are relative to `kt/`. Notes that mention the
 manuscript's earlier titles or the earlier repository describe the history of the code.
 
+# Release 9.0.0: runs and analyses of the sixth UMUAI version (third revision)
+
+New training runs, CPU, one thread, update budget of release 3.10.0, listed in `kt/results_r23/run_list_r23.csv` (34 runs).
+
+| Run set | Conditions | Units | Script |
+|---|---|---|---|
+| sim-DBE-mix, two more subsamples for the terms of Table 2 | `empty`, `true_emb`, `true_dp_emb`, `support_emb`, `dp_emb` | 5%, 10%, 25%, subsamples 3-4 (30 runs) | `src/r21_controls.py`, `jobs_r23_sim.txt` |
+| Junyi published prerequisite map against its degree-preserving rewiring | `map_dp_emb` | 10%, subsamples 1-4 (4 runs; subsample 0 from release 6.0.0) | `src/r20_controls.py`, `jobs_r23_map.txt`, `src/r23_runq20.sh` |
+
+Analyses (no training):
+
+| Analysis | Script | Output |
+|---|---|---|
+| Out-of-order shares: first attempts at a KC made before a mapped prerequisite is attempted or passed, and their correctness, in Junyi, DBE-KT22, XES3G5M and the three worlds | `src/r23_order.py` | `results_r23/prereq_order.json` |
+| Positive control by world with sim-DBE-mix at five subsamples; edge terms pooled over sizes within each world; Junyi map over five subsamples | `src/r23_analyse.py` | `results_r23/positive_control.json`, `results_r23/junyi_map.json` |
+| Gain rule for the closed loop (largest predicted one-step increase of a KC's own success, exact rollout of the probe), gates none / G* / DP(G*), 24 tracers per world; structure of G100 and how often no KC is open under it | `src/r23_gain.py <world>` | `results_r23/decisions_sim_<world>.json` (merged with the release 8.0.0 policies) |
+| Closed loop of sim-DBE-mix with its own (perturbed) learners; release 8.0.0 had used the learners of sim-DBE there | `src/r23_mixloop.py` | `results_r23/decisions_sim_sim_dbe_mix.json` |
+| Seed variance of first-attempt predictions and AUC with and without the graph | `src/r23_seedvar.py` | `results_r23/seed_variance.json` |
+| Fig. 3 of the manuscript | `src/r23_figures.py` | `results_r23/fig3_positive_control.png` |
+| Online Resource 5 (Sections S17-S23) and the run list | `src/r23_supplement.py` | `results_r23/online_resource_5.md`, `results_r23/run_list_r23.csv` |
+
+Corrections against release 8.0.0: asterisks in table cells of Online Resource 5 are escaped (G* had been read as
+emphasis); the pooled positive-control table, labelled as two worlds but pooling three, is withdrawn; transfer terms are
+listed once; MIRT regret at 100% is added to Table S20.3; the closed loop of sim-DBE-mix uses its own learners.
+
+Unit tests: `tests/test_kt_graphs.py` adds tests of the gain rollout and of the out-of-order counts (23 tests pass).
+Earlier content is unchanged.
+
 # Release 8.0.0: runs and analyses of the fifth UMUAI version (second revision)
 
 New training runs, CPU, one thread, update budget of release 3.10.0, listed in `kt/results_r22/run_list_r22.csv` (92 runs).
