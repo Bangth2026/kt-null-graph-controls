@@ -4,6 +4,39 @@ From version 4.0.0 this directory is the content of the repository `kt-null-grap
 written when each release was made, inside the earlier repository; paths are relative to `kt/`. Notes that mention the
 manuscript's earlier titles or the earlier repository describe the history of the code.
 
+# Release 8.0.0: runs and analyses of the fifth UMUAI version (second revision)
+
+New training runs, CPU, one thread, update budget of release 3.10.0, listed in `kt/results_r22/run_list_r22.csv` (92 runs).
+
+| Run set | Conditions | Units | Script |
+|---|---|---|---|
+| Third simulated world, sim-DBE-mix: the world of sim-DBE with each learner's curriculum position perturbed (Gaussian noise, SD = K/3, separate random stream), so that more first attempts come before the prerequisites are mastered; full ladder on G* and G | `empty`, `uni_emb`, `true_er_emb`, `true_dp_emb`, `true_emb`, `er_emb`, `dp_emb`, `support_emb` | 5%, 10%, 25%, subsamples 0-2 (72 runs) | `src/r22_sim.py` (world and logs), `src/r21_controls.py`, `jobs_r22_sim.txt` |
+| Partial perturbation of the Q-matrix (item-level probe): the KCs of a random 10% or 20% of the questions are permuted among those questions | `q_pqm10`, `q_pqm20` (`perturb_q` in `src/r20_controls.py`) | assist09, assist12, assist17 (2), eedi, ednet, statics11 (2), dbe_kt22 (2) at 10% (20 runs) | `src/r20_controls.py`, `jobs_r22_q.txt` |
+| Reproduction | `q_qm` on Statics 2011, subsample 0 | 1 run, reproduces the archived first-attempt AUC exactly | `runs_r22/repro/` |
+
+Rebuild sim-DBE-mix with `python3 src/r22_sim.py world sim_dbe_mix` (it copies the parameters and true graph of sim-DBE and
+generates the logs with seed 4242).
+
+Analyses (no training):
+
+| Analysis | Script | Output |
+|---|---|---|
+| Share of first attempts made before the true prerequisites are mastered, per world | `src/r22_sim.py share` | `results_r22/prereq_share.json` |
+| Positive control by world with t intervals over subsamples; partial Q-matrix perturbation | `src/r22_analyse.py` | `results_r22/positive_control.json`, `results_r22/q_partial.json` |
+| Corpus mean, mixed-model estimate, t and cluster-bootstrap intervals and t-based MDE for every term; the primary comparison with the graph at (E) only; other graph constructions; forest plot | `src/r22_stats.py` | `results_r22/stats_r22.json`, `results_r22/fig6_forest.png` (Fig. 5 of the manuscript) |
+| Next-KC decisions: two-dimensional IRT simulator, chance-corrected agreement (kappa), curriculum-window and unit candidate sets | `src/r22_decisions.py` | `results_r22/decisions_r22.json` |
+| Closed loop in three worlds with 24 tracers each (3 subsamples x 2 sizes x 4 graph inputs), random policy, both oracles, forgetting calibration, effects with t intervals over training cells | `src/r22_simdec.py <world>` | `results_r22/decisions_sim_<world>.json` |
+| Figures 3 and 6 of the manuscript | `src/r22_figures.py`, `src/r22_fig_decisions.py` | `results_r22/fig3_positive_control.png`, `results_r22/fig6_decisions.png` |
+| Online Resource 5 (Sections S17-S23) and the run list | `src/r22_supplement.py` | `results_r22/online_resource_5.md`, `results_r22/run_list_r22.csv` |
+
+Corrections against release 7.0.0: Online Resource 5 no longer shifts the columns of rows whose term contains `|`; the recall
+of G100 in sim-A09 is reported against both denominators (438 true edges among KCs that occur in the logs, 557 in all); the
+log-fitted simulator formerly labelled `pfa` is called the global-practice simulator. `src/r21_runq.sh` (the job queue used
+since release 7.0.0) is added.
+
+Unit tests: `tests/test_kt_graphs.py` adds tests of the partial Q-matrix perturbation, the perturbed learners of sim-DBE-mix
+and the curriculum-window candidate set (21 tests pass). Earlier content is unchanged.
+
 # Release 7.0.0: runs and analyses of the third UMUAI version
 
 New training runs, CPU, one thread, update budget of release 3.10.0 (at most 2,000 updates, validation every 25, patience 8),

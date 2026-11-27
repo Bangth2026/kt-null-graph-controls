@@ -179,3 +179,29 @@ def test_route_graph_chains_siblings_without_reciprocal_pairs():
         R20.DATA = old
     assert A.sum() == 3 and (A * A.T).sum() == 0
     assert A[2, 0] == 1 and A[0, 1] == 1 and A[4, 3] == 1                             # order in which the learner met them
+
+
+# ---------------------------------------------------------------- release 8.0.0
+def test_partial_q_perturbation_keeps_items_per_kc_and_moves_only_the_share():
+    import numpy as np, r20_controls as R20
+    qk = np.repeat(np.arange(20), 10); out = R20.perturb_q(qk, 0.2, 5000)
+    assert (np.bincount(out, minlength=20) == np.bincount(qk, minlength=20)).all()
+    assert (out != qk).sum() <= 40 and (out != qk).sum() > 0
+    assert (R20.perturb_q(qk, 0.2, 5000) == out).all()                                # reproducible
+
+
+def test_mix_learners_get_a_perturbed_order_and_keep_the_base_order_otherwise():
+    import numpy as np, r20_sim as S, r22_sim as S22
+    W = S.load_world('sim_dbe'); base = S.Learners(W, 30, 7); mix = S22.MixLearners(W, 30, 7, W['K'] / 3)
+    for o in mix.lorder: assert sorted(o) == list(range(W['K']))
+    assert np.mean([not np.array_equal(a, b) for a, b in zip(mix.lorder, base.lorder)]) > 0.9
+    assert np.allclose(mix.speed, base.speed)                                        # same learners otherwise
+
+
+def test_window_candidates_are_unseen_and_at_most_ten():
+    import numpy as np, r22_decisions as D
+    rng = np.random.default_rng(0); n, L, K = 4, 6, 40
+    seen = rng.random((n, L, K)) < 0.3; cur = rng.integers(0, K, (n, L)); rank = rng.permutation(K) / K
+    win, uni = D.candidate_sets(seen, cur, rank, None)
+    assert uni is None and (win & seen).sum() == 0 and win.sum(-1).max() <= 10
+

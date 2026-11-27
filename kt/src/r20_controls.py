@@ -51,7 +51,15 @@ NCA = ('nca', 'nca_dp', 'nca_static', 'nca_nonull', 'nca_nogate', 'nca_nomargin'
 GRAPHS = ('expert_emb', 'expert_dp_emb', 'llm_emb', 'llm_dp_emb', 'map_dp_emb', 'true_emb', 'true_dp_emb', 'st_true', 'st_true_dp')
 SIMPROBE = ('empty', 'support_emb', 'er_emb', 'dp_emb')
 FA = ('empty_fa',)   # graph-free control for the margin term: the empty-graph probe with LAM1 x cross-entropy on first attempts   # handled here (and the model saved) on simulated corpora
-QC = ('q_kc', 'q_id', 'q_qm', 'q_rqm', 'q_qm_g', 'q_qm_dp', 'q_diff')
+def perturb_q(qk, share, seed):
+    """Release 8.0.0: permute the KCs of a random share of the questions among those questions (every KC keeps its
+    number of questions)."""
+    rng = np.random.default_rng(seed); N = len(qk)
+    idx = rng.choice(N, int(round(share * N)), replace=False); qk = qk.copy(); qk[idx] = qk[idx][rng.permutation(len(idx))]
+    return qk
+
+
+QC = ('q_kc', 'q_id', 'q_qm', 'q_rqm', 'q_qm_g', 'q_qm_dp', 'q_diff', 'q_pqm10', 'q_pqm20')
 
 
 def named_graph(path, names):
@@ -173,8 +181,10 @@ def main(argv=None):
         qk = df.drop_duplicates('q').set_index('q').kc.reindex(range(N)).fillna(0).astype(int).values
         if a.cond == 'q_rqm':
             perm = np.random.default_rng(4000 + a.sub).permutation(N); qk = qk[perm]
+        if a.cond in ('q_pqm10', 'q_pqm20'):                       # release 8.0.0: partial perturbation, size-preserving
+            qk = perturb_q(qk, int(a.cond[-2:]) / 100, 5000 + a.sub)
         A = {'q_qm_g': sup, 'q_qm_dp': rw}.get(a.cond)
-        m = QProbe(N, K, qk, A=A, use_item=a.cond in ('q_id', 'q_qm', 'q_rqm', 'q_qm_g', 'q_qm_dp'),
+        m = QProbe(N, K, qk, A=A, use_item=a.cond in ('q_id', 'q_qm', 'q_rqm', 'q_qm_g', 'q_qm_dp', 'q_pqm10', 'q_pqm20'),
                    use_kc=a.cond != 'q_id', use_diff=a.cond == 'q_diff')
         family = 'qprobe'; A = sup if A is None else A
         extra.update(n_items=N, items_seen_train=int(tr.q.nunique()),

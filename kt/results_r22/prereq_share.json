@@ -1,0 +1,29 @@
+{
+ "sim_dbe": {
+  "first_attempts": 123485,
+  "with_prerequisites": 87913,
+  "before_prerequisites_mastered": 20842,
+  "share_all": 0.16878163339676883,
+  "share_of_kcs_with_prerequisites": 0.23707529034386268,
+  "correct_if_unmet": 0.3794261587179733,
+  "correct_if_met": 0.662551624398026
+ },
+ "sim_a09": {
+  "first_attempts": 109314,
+  "with_prerequisites": 97322,
+  "before_prerequisites_mastered": 70561,
+  "share_all": 0.6454891413725597,
+  "share_of_kcs_with_prerequisites": 0.7250262016810176,
+  "correct_if_unmet": 0.3512705318802171,
+  "correct_if_met": 0.5197862561189791
+ },
+ "sim_dbe_mix": {
+  "first_attempts": 119723,
+  "with_prerequisites": 88683,
+  "before_prerequisites_mastered": 32072,
+  "share_all": 0.2678850346215848,
+  "share_of_kcs_with_prerequisites": 0.36164766640731594,
+  "correct_if_unmet": 0.3388937390870541,
+  "correct_if_met": 0.6690925791807246
+ }
+}

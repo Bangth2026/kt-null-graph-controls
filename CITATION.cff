@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the article."
 title: "kt-null-graph-controls: code and run files for null-graph controls in knowledge tracing"
-version: 7.0.0
+version: 8.0.0
 date-released: 2026-11-27
 license: MIT
 doi: 10.5281/zenodo.24492979
@@ -17,4 +17,4 @@ preferred-citation:
   authors:
     - family-names: Truong
       given-names: Hai Bang
-  notes: "manuscript under revision for User Modeling and User-Adapted Interaction (third version)"
+  notes: "manuscript under revision for User Modeling and User-Adapted Interaction (fifth version)"
