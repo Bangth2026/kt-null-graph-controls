@@ -138,3 +138,44 @@ def test_simulated_learners_share_random_numbers_across_policies():
     a = R20S.Learners(W, 5, seed=1); b = R20S.Learners(W, 5, seed=1)
     assert (a.m == b.m).all()
     ch = np.zeros(5, int); assert (a.step(ch) == b.step(ch)).all()
+
+
+# ------------------------------------------------------------------ release 7.0.0
+def test_gate_opens_kc_only_when_all_prerequisites_passed():
+    import r21_sim as R21S
+    G = np.zeros((4, 4), np.float32); G[0, 2] = G[1, 2] = 1; G[2, 3] = 1            # 0,1 -> 2 -> 3
+    P = np.array([[True, False, False, False], [True, True, False, False], [True, True, True, False]])
+    O = R21S.open_set(G, P)
+    assert O[:, 0].all() and O[:, 1].all()                                            # no prerequisites
+    assert list(O[:, 2]) == [False, True, True] and list(O[:, 3]) == [False, False, True]
+
+
+def test_passed_needs_two_correct_in_a_row():
+    import r21_sim as R21S
+    hq = np.array([[0, 0, 1, 1, 1]]); hr = np.array([[1, 1, 1, 0, 1]])
+    P = R21S.passed(hq, hr, 5, 3)
+    assert P[0, 0] and not P[0, 1] and not P[0, 2]
+
+
+def test_support_is_dominant_direction_with_min_count():
+    import pandas as pd
+    from r5_controls import transition_support
+    # 12 moves 0->1, 3 moves 1->0 (support 15 >= 10): edge 0->1 only; 4 moves 1->2: below s, no edge
+    seqs = [[0, 1]] * 12 + [[1, 0]] * 3 + [[1, 2]] * 4
+    df = pd.DataFrame([dict(user=f'u{i}', kc=k) for i, s in enumerate(seqs) for k in s])
+    A = transition_support(df, 3, s=10) > 0
+    assert A[0, 1] and not A[1, 0] and not A[1, 2] and A.sum() == 1
+
+
+def test_route_graph_chains_siblings_without_reciprocal_pairs():
+    import json, tempfile, argparse, pandas as pd
+    import r21_controls as R21, r20_controls as R20
+    d = tempfile.mkdtemp(); json.dump({'groups': [['a', 'b', 'c'], ['d', 'e']]}, open(f'{d}/xes3g5m_route.json', 'w'))
+    old = R20.DATA; R20.DATA = d
+    try:
+        rows = [dict(user='u1', kc=k, kc_name=n, split='train') for k, n in [(2, 'c'), (0, 'a'), (1, 'b'), (4, 'e'), (3, 'd')]]
+        df = pd.DataFrame(rows); A = R21.route_graph(df, 5, ['a', 'b', 'c', 'd', 'e'])
+    finally:
+        R20.DATA = old
+    assert A.sum() == 3 and (A * A.T).sum() == 0
+    assert A[2, 0] == 1 and A[0, 1] == 1 and A[4, 3] == 1                             # order in which the learner met them

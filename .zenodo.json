@@ -1,28 +1,38 @@
 {
-  "upload_type": "software",
-  "title": "kt-null-graph-controls: code and run files for \"When does a concept graph help a knowledge tracer? Null-graph controls, null-calibrated gating and closed-loop tests for graph-based learner models\"",
-  "creators": [
-    {
-      "name": "Truong, Hai Bang",
-      "affiliation": "Saigon International University",
-      "orcid": "0000-0001-5094-3128"
-    }
-  ],
-  "description": "<p>Code, run files and analysis scripts for the manuscript \"When does a concept graph help a knowledge tracer? Null-graph controls, null-calibrated gating and closed-loop tests for graph-based learner models\" (H. B. Truong, under revision for User Modeling and User-Adapted Interaction).</p><p>The study fixes KC-level tracers and measures a concept graph against an empty-graph control that keeps every other parameter, a ladder of null graphs, fixed random codes and capacity controls on eleven public corpora, at five entry points (embedding refinement, attention bias, state channel, the training loss of PDKT and the propagation of GKT), with a replication on two held-out corpora under a pre-specified plan. Every run file, analysis output and script behind the tables and figures of the manuscript and its Online Resources is under kt/; unit tests in tests/.</p><p>Version 6.0.0 adds the runs and analyses of the second UMUAI version (kt/src/r20_*.py, kt/src/prep_r20.py, kt/runs_r20, kt/runs_r20_sim, kt/results_r20): 362 new training runs (304 on real corpora, 58 in simulated worlds). New: NCA-KT, a null-calibrated, mastery-conditioned and gated graph tracer (r20_models.NCAKT) with five ablations and a graph-free control that reweights first attempts in the loss; an item-level probe with a Q-matrix ladder (size-preserving random Q-matrix) on seven corpora; DBE-KT22 as an eleventh corpus with its instructor-authored KC relations and a generated prerequisite graph; two simulated worlds with a known prerequisite graph (prerequisite-gated BKT with forgetting) used as a positive control and for a 40-step closed loop with target, stabilized, frontier, oracle, curriculum and random policies. The rebuilt corpora reproduce the archived empty-graph run on Statics 2011 to the last digit; unit tests cover NCA-KT, the all-KC scoring of the closed loop, the random Q-matrix and the simulated learners.</p><p>Version 5.0.0 adds the runs and analyses of the UMUAI revision (kt/src/r19_*.py, kt/src/prep_r19.py, kt/runs_r19, kt/results_r19): 142 new training runs and 11 reruns that reproduce archived runs to the last digit on the rebuilt corpora. New run sets: a support graph built from all training learners given to a tracer trained on 10% of them (transfer of structure), the null-graph ladder inside PDKT, three training seeds per subsample, 5% probes with candidate scores for the decision analysis, a 500-interaction cap on two larger corpora, and XES3G5M without multi-KC questions. New analyses: first-attempt references (KC rate, PFA-style model) with pooled, per-learner and within-KC AUC; graph quality by training size; four interval methods and a seed-based smallest effect of interest; Benjamini-Hochberg adjustment over the exploratory terms; next-KC decisions under a Rasch and a learning simulator with a stabilized target rule (tolerance band and curriculum tie-break). Earlier content (releases 2.0.0 to 4.1.0) is unchanged.</p>",
-  "version": "6.0.0",
-  "license": "MIT",
-  "access_right": "open",
-  "keywords": [
-    "knowledge tracing",
-    "concept graph",
-    "null models",
-    "learner modeling",
-    "adaptive learning systems",
-    "next-KC sequencing",
-    "equivalence testing",
-    "Q-matrix",
-    "simulated learners",
-    "closed-loop evaluation",
-    "positive control"
-  ]
+ "upload_type": "software",
+ "title": "kt-null-graph-controls: code and run files for \"Do log-built concept graphs help KC-level learner models? Entry-point null graphs, a positive control and decision-level tests\"",
+ "creators": [
+  {
+   "name": "Truong, Hai Bang",
+   "affiliation": "Saigon International University",
+   "orcid": "0000-0001-5094-3128"
+  }
+ ],
+ "description": "<p>Code, run files and analysis scripts for the manuscript \"Do log-built concept graphs help KC-level learner models? Entry-point null graphs, a positive control and decision-level tests\" (H. B. Truong, under revision for User Modeling and User-Adapted Interaction).</p><p>The study fixes KC-level tracers and measures a concept graph against an empty-graph control that keeps every other parameter, a ladder of null graphs, fixed random codes, capacity controls and seed ensembles on ten public corpora, at five entry points (embedding refinement, attention bias, state channel, the training loss of PDKT and the propagation of GKT), with a replication on two held-out corpora under a pre-specified plan, an item-level Q-matrix ladder, authored KC structures (Junyi, DBE-KT22, XES3G5M KC routes), and simulated worlds with a known prerequisite graph used as a positive control and for next-KC decisions with prerequisite gating. Every run file, analysis output and script behind the tables and figures of the manuscript and its Online Resources is under kt/; unit tests in tests/.</p><p>Version 7.0.0 adds the runs and analyses of the third UMUAI version (kt/src/r21_*.py, kt/runs_r21_sim, kt/runs_r21, kt/results_r21): 143 training runs (the full null-graph ladder on the true graph of two simulated worlds at 5%, 10% and 25% of the training learners; the XES3G5M KC routes and their rewiring), decisions in the simulated worlds with a gate on the candidate set, a KC-rate decision rule, set-level agreement, sensitivity to the target, seed ensembles, the minimum detectable effect of every comparison and the sensitivity of the graph construction to its threshold. Earlier content (releases 2.0.0 to 6.0.0) is unchanged.</p>",
+ "version": "7.0.0",
+ "license": "MIT",
+ "access_right": "open",
+ "keywords": [
+  "knowledge tracing",
+  "concept graph",
+  "null models",
+  "learner modeling",
+  "adaptive learning systems",
+  "next-KC sequencing",
+  "equivalence testing",
+  "Q-matrix",
+  "simulated learners",
+  "closed-loop evaluation",
+  "positive control",
+  "prerequisite gating",
+  "statistical power",
+  "seed ensembles"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "https://github.com/Bangth2026/kt-null-graph-controls/tree/v7.0.0",
+   "relation": "isSupplementTo",
+   "scheme": "url"
+  }
+ ]
 }

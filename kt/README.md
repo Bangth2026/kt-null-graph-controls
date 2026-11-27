@@ -4,6 +4,38 @@ From version 4.0.0 this directory is the content of the repository `kt-null-grap
 written when each release was made, inside the earlier repository; paths are relative to `kt/`. Notes that mention the
 manuscript's earlier titles or the earlier repository describe the history of the code.
 
+# Release 7.0.0: runs and analyses of the third UMUAI version
+
+New training runs, CPU, one thread, update budget of release 3.10.0 (at most 2,000 updates, validation every 25, patience 8),
+graph in the embedding refinement (attention bias off), listed in `kt/results_r21/run_list_r21.csv` (143 runs).
+
+| Run set | Conditions | Units | Script |
+|---|---|---|---|
+| Positive control in the simulated worlds of release 6.0.0 (prerequisite-gated BKT with forgetting): full ladder on the true graph G* and on the log-built graph G | `empty`, `uni_emb` (U), `true_er_emb` (ER(G*)), `true_dp_emb`, `true_emb`, `er_emb`, `dp_emb`, `support_emb` | `sim_dbe`, `sim_a09` at 5%, 10%, 25%, subsamples 0-2 (132 runs; 10% subsample 0 of six conditions from release 6.0.0) | `src/r21_controls.py`, `jobs_r21_sim.txt` |
+| XES3G5M KC routes (authored structure on a held-out corpus) | `route_emb`, `route_dp_emb` | 10%, subsamples 0-4 (10 runs) | `src/r21_controls.py`, `jobs_r21_xes.txt` |
+| Reproduction | `empty` on XES3G5M, subsample 0 | 1 run, reproduces the archived first-attempt AUC exactly | `runs_r21/repro/` |
+
+The KC routes come from `metadata/questions.json` and `kc_routes_map.json` of the original XES3G5M release (the pyKT concept ids
+index `kc_routes_map.json`); leaf KCs that share a parent node are grouped in `graphs_r21/xes3g5m_route.json` (copy it to
+`data/`). Rebuilding the simulated worlds with `src/r20_sim.py world <name>` reproduces `graphs_r20/<name>_world.npz` exactly,
+and a rerun of `sim_a09`, 10%, subsample 0, `empty` reproduces its archived test AUC to the last digit.
+
+Analyses (no training):
+
+| Analysis | Script | Output |
+|---|---|---|
+| Positive control by world and size; XES3G5M routes | `src/r21_analyse.py` | `results_r21/positive_control.json`, `results_r21/xes_routes.json` |
+| Decisions in the simulated worlds: target, frontier and KC-rate rules with a gate on the candidate set (none, G*, DP(G*), G100 of the logs), tracers given empty, G, G* or DP(G*) at 10% and 25% | `src/r21_sim.py <world>` | `results_r21/decisions_sim_<world>.json` |
+| KC-rate decision rule, set-level agreement (Jaccard of near-tie sets, top-5 overlap), sensitivity to the target tau, seed ensembles of candidate scores | `src/r21_decisions.py` | `results_r21/decisions_more.json` |
+| Minimum detectable effect of every exploratory term; seed ensembles on prediction; first-attempt references on one set of corpora; regret against AUC at 25% | `src/r21_stats.py` | `results_r21/stats_more.json` |
+| G100 recomputed on every corpus; sensitivity of the support graph to s; recovery of G* | `src/r21_graphs.py` | `results_r21/graphs.json` |
+| Figs. 2 and 3 of the manuscript | `src/r21_figures.py` | `results_r21/fig2_ladder.png`, `results_r21/fig3_positive_control.png` |
+| Online Resource 5 and the run list | `src/r21_supplement.py` | `results_r21/online_resource_5.md`, `results_r21/run_list_r21.csv` |
+
+Unit tests: `tests/test_kt_graphs.py` adds tests of the gate, the passed criterion, the support rule of Eq. (2) and the route
+graph (18 tests pass). Release 6.0.0 content (NCA-KT, item level, DBE-KT22) is unchanged; the third UMUAI version uses its
+item-level, DBE-KT22 and simulated-world runs.
+
 # Release 6.0.0: runs and analyses of the second UMUAI version
 
 New training runs: 304 on real corpora (kt/runs_r20) and 58 in two simulated worlds (kt/runs_r20_sim), all on a CPU

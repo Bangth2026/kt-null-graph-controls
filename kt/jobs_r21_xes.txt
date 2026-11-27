@@ -1,0 +1,11 @@
+--data xes3g5m --frac 0.1 --sub 0 --rep 0 --cond route_emb --out /home/claude/kt/runs_r21
+--data xes3g5m --frac 0.1 --sub 0 --rep 0 --cond route_dp_emb --out /home/claude/kt/runs_r21
+--data xes3g5m --frac 0.1 --sub 1 --rep 0 --cond route_emb --out /home/claude/kt/runs_r21
+--data xes3g5m --frac 0.1 --sub 1 --rep 0 --cond route_dp_emb --out /home/claude/kt/runs_r21
+--data xes3g5m --frac 0.1 --sub 2 --rep 0 --cond route_emb --out /home/claude/kt/runs_r21
+--data xes3g5m --frac 0.1 --sub 2 --rep 0 --cond route_dp_emb --out /home/claude/kt/runs_r21
+--data xes3g5m --frac 0.1 --sub 3 --rep 0 --cond route_emb --out /home/claude/kt/runs_r21
+--data xes3g5m --frac 0.1 --sub 3 --rep 0 --cond route_dp_emb --out /home/claude/kt/runs_r21
+--data xes3g5m --frac 0.1 --sub 4 --rep 0 --cond route_emb --out /home/claude/kt/runs_r21
+--data xes3g5m --frac 0.1 --sub 4 --rep 0 --cond route_dp_emb --out /home/claude/kt/runs_r21
+--data xes3g5m --frac 0.1 --sub 0 --rep 0 --cond empty --out /home/claude/kt/runs_r21/repro
